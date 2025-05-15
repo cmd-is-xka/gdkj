@@ -21,9 +21,9 @@ jobs:
       #   run: |
       #     pip install -r requirements.txt
 
-      # - name: Run API test
-      #   run: |
-      #     python test_api.py
+      - name: Run API test
+        run: |
+          python test_api.py
 
       - name: Notify result
         run: |

@@ -1,7 +1,1 @@
-redis
-pytest
-jsonpath
-python-dateutil
-pymssql
-pyodbc
-retrying
+requests

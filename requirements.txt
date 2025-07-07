@@ -1,5 +1,0 @@
-requests
-json
-time
-urllib3
-allure-pytest

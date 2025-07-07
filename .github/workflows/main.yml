@@ -23,7 +23,7 @@ jobs:
 
       - name: Run API test
         run: |
-          python test_api.py
+          python ./Gdkjmain/main.py
 
       - name: Notify result
         run: |

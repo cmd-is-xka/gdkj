@@ -9,8 +9,8 @@ import json
 #最后运行地方.
 if __name__ == '__main__':
     writr_ini('Gdkj')
-    pytest.main(["gdkjtestpro/test_login.py::TestAllTestName", '-v', '-s','--junitxml=junit/test-results-gdkj.xml'])
-    # pytest.main(["gdkjtestpro", '-v', '-s','--junitxml=junit/test-results-gdkj.xml','-k','not test_login'])
+    pytest.main(["gdkjtestpro/test_login.py::TestAllTestName"])
+    pytest.main(["gdkjtestpro", '-v', '-s','--junitxml=junit/test-results-gdkj.xml','-k','not test_login'])
 
     # 读取 XML 文件
     tree = ET.parse('junit/test-results-gdkj.xml')

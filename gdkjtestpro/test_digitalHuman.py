@@ -52,7 +52,7 @@ class Name:
       'Content-Type': 'application/json',
       'Authorization': '%s'%(token)}
       start_time = time.time()
-      response = requests.request("POST", url, headers=headers, data=payload,verify=False)
+      response = requests.request("POST", url, headers=headers, data=payload)
 
       assert response.status_code ==200
 

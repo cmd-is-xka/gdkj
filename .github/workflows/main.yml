@@ -1,8 +1,8 @@
-name: Run API Test Every 5 Minutes
+name: RDaily Task
 
 on:
   schedule:
-    - cron: '30 8 * * *'  # 每 5 分钟执行一次
+    - cron: '0 8,16 * * *'  # 每 5 分钟执行一次
   workflow_dispatch:  # 支持手动触发
 
 jobs:

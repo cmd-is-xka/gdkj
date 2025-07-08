@@ -2,7 +2,7 @@
 import requests
 import json
 import time
-from sympy import false
+
 import urllib3
 urllib3.disable_warnings()
 import sys

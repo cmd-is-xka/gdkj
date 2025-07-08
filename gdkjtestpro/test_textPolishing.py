@@ -1,5 +1,4 @@
 
-from pymysql import NULL
 import requests
 import json
 import time

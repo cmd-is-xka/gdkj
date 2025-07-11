@@ -29,9 +29,7 @@ class Name:
       'Authorization': '%s'%(token)}
       start_time = time.time()
       response = requests.request("POST", url, headers=headers, data=payload)
-
       assert response.status_code ==200
-
       end_time = time.time()
       response_time = end_time - start_time
 
@@ -42,6 +40,7 @@ class Name:
 
       code = result['code']
       print(code)
+      assert code == 0
       return
    
 

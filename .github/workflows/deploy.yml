@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main  # 或你默认分支
-
 jobs:
   deploy:
     runs-on: ubuntu-latest

@@ -72,5 +72,5 @@ if __name__ == "__main__":
 
     # 执行发送
     summary = parse_allure_summary(summary_path)
-    send_wechat_message(webhook, summary)
+    send_wechat_message(webhook, summary,report_url)
 

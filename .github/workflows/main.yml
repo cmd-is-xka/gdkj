@@ -26,7 +26,7 @@ jobs:
           sudo mv allure-2.27.0 /opt/allure
           sudo ln -s /opt/allure/bin/allure /usr/bin/allure
           allure --version
-          
+
       - name: Install dependencies
         run: |
           pip install -r installpackage.txt
@@ -38,3 +38,8 @@ jobs:
       - name: Notify result
         run: |
           python notify.py
+          - name: 🚀 Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./allure-report

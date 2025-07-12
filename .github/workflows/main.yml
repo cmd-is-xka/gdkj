@@ -2,7 +2,7 @@ name: RDaily Task
 
 on:
   schedule:
-    - cron: '0 0,6 * * *'  # 每 5 分钟执行一次
+    - cron: '0 0,6,9 * * *'  # 每 5 分钟执行一次
   workflow_dispatch:  # 支持手动触发
 
 jobs:

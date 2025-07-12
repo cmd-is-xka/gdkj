@@ -17,15 +17,33 @@ jobs:
         with:
           python-version: '3.10'  # 使用稳定版本
 
-      - name: 📥 Install Allure CLI
+      # - name: 📥 Install Allure CLI
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y default-jre wget unzip
+      #     wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.zip
+      #     unzip allure-2.27.0.zip
+      #     sudo mv allure-2.27.0 /opt/allure
+      #     sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+      #     allure --version
+      - name: 📥 Check & Install Allure CLI (only if not installed)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y default-jre wget unzip
-          wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.zip
-          unzip allure-2.27.0.zip
-          sudo mv allure-2.27.0 /opt/allure
-          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          if ! command -v allure &> /dev/null
+          then
+            echo "Allure 未安装，开始安装..."
+            sudo apt-get update
+            sudo apt-get install -y default-jre wget unzip
+            wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.zip
+            unzip allure-2.27.0.zip
+            sudo mv allure-2.27.0 /opt/allure
+            sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          else
+            echo "✅ Allure 已安装，跳过安装步骤"
+          fi
+      - name: ✅ 查看 Allure 版本确认安装
+        run: |
           allure --version
+
 
       - name: Install dependencies
         run: |
@@ -38,8 +56,8 @@ jobs:
       - name: Notify result
         run: |
           python notify.py
-          - name: 🚀 Deploy to GitHub Pages
-          uses: peaceiris/actions-gh-pages@v4
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./allure-report
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report

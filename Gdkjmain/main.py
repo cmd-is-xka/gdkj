@@ -25,7 +25,6 @@ def run_tests_with_allure():
 
     if ret != 0:
         print("❌ pytest 执行失败，Allure 报告不会生成")
-        return
 
     print("✅ pytest 执行完成，开始生成 Allure 报告...")
 

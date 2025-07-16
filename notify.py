@@ -65,7 +65,7 @@ if __name__ == "__main__":
     summary_path = "allure-report/widgets/summary.json"
 
     # 2. 企业微信 webhook
-    webhook = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=fd9662b6-1aa1-4944-87ff-03f33012dd39"
+    webhook = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2ad33809-3916-48f3-ab3b-891b8e486581"
 
     # 3. 可选：你把报告部署到某处后的地址
     report_url = "https://cmd-is-xka.github.io/gdkj/"

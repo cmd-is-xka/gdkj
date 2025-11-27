@@ -71,6 +71,6 @@ class TestAllTestName:
       testcase1.Assert_testname(data)
 
 
-if __name__ == '__main__':
-    #调试执行，推送注销
-    pytest.main(["gdkjtestpro/test_digitalHuman.py::TestAllTestName", '-v', '-s'])
+# if __name__ == '__main__':
+#     #调试执行，推送注销
+#     pytest.main(["gdkjtestpro/test_digitalHuman.py::TestAllTestName", '-v', '-s'])
